@@ -46,7 +46,8 @@ map(translate, ["excuse me","are you","American","?"])
 for pre, fill, node in RenderTree(root):
     Eng_word = node.name["English"]
     print("%s%s (%s)" % (pre, Eng_word,translate(Eng_word)))
-
-postarr = [node.name["English"] for node in PostOrderIter(root)]
-for word in postarr:
-    print(word)
+if  __name__ == "__main__": 
+ print("executing main script")
+ postarr = [node.name["English"] for node in PostOrderIter(root)]
+ for word in postarr:
+    print(word,end=", ")

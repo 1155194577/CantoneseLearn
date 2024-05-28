@@ -32,37 +32,3 @@ class WordNode(NodeMixin):
         except:
             print("error")
 
-## write a function , that convert any sentence to Binary Tree 
-## if subarr.len == 2 => flatten subarr and createnode. 
-## if subarr.len == 2 && childrens are str && not list => return; 
-arr = [["excuse me","miss"],[["are you","American"],["?"]]]
-concated = flatten(arr)
-print(concated)
-print(" ".join(concated))
-root = None
-def CreateTree(arr): 
-    flated = flatten(arr)
-    concated = " ".join(flated)
-    curr = WordNode(English=concated)
-    global root 
-    root= curr
-    print(WordNode)
-    length = len(arr)
-    if (length==1):
-        if isinstance(arr[0],str):
-            WordNode(English=arr[0],parent=curr)
-        else:
-            CreateTree(arr[0])
-    elif (length == 2):
-        if isinstance(arr[0],str):
-            WordNode(English=arr[0],parent=curr)
-        else: 
-            CreateTree(arr[0])
-        if isinstance(arr[1],str):
-            WordNode(English=arr[1],parent=curr)
-            CreateTree(arr[1])
-            
-CreateTree(arr)
-
-for pre, _, node in RenderTree(root):
-    print("%s%s" % (pre, node.name))
